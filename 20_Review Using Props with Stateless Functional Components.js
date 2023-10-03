@@ -5,24 +5,19 @@ class CampSite extends React.Component {
     render() {
       return (
         <div>
-          <Camper name:"CamperBot}/>
+          <Camper name="CamperBot"/>
         </div>
       );
     }
   };
   // Change code below this line
   
-class Camper extends React.Component{
-    constructor(props){
-      super(props);
-      this.state = {
-        name: 'CamperBot'
-      };
-    }
-    render() {
-      return (
-        <p> My Name is {this.props.name}</p>
-        
-      )
-    }
-  }
+  const Camper = props => <p>{props.name}</p>;
+  
+  Camper.defaultProps = {
+    name: "CamperBot"
+  };
+  
+  Camper.propTypes = {
+    name: PropTypes.string.isRequired
+  };
